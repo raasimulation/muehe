@@ -1,0 +1,144 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#inside {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    background-color: beige;
+}
+
+#hello {
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+#hello:hover {
+    font-size: 72px;
+    cursor: help;
+    transform: rotate(-20deg);
+    content: "click me";
+}
+
+button {
+    color: white;
+    padding: 16px;
+    border: none;
+}
+
+button:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+#river {
+    background-color: rgb(40, 76, 206);
+}
+
+#oracle {
+    background-color: rgb(197, 45, 170);
+}
+
+#flower {
+    background-color: rgb(80, 210, 199);
+}
+
+
+#oracle-inside {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(197, 45, 170);
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
+#buttons {
+    display: flex;
+    padding: 56px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#question {
+    width: 100%;
+    height: 10%;
+}
+
+.option {
+    background-color: darkmagenta;
+    color: hsl(300, 100%, 90%);
+    padding: 8px 16px;
+}
+
+.option:hover {
+    background-color: hsl(300, 100%, 35%);
+}
+
+#display-text {
+    width: 50vw;
+    font-size: 64px;
+    font-family:cursive;
+    font-weight:bold;
+    color: #000;
+    -webkit-text-stroke: 0.5px #ffa2f1;
+    opacity: 1;
+    transition: opacity 1.4s ease-out;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 1);
+    position: absolute;
+}
+
+.back {
+    padding: 8px 16px;
+    background-color: transparent;
+    color: hsl(0, 0%, 75%);
+    margin-bottom: 16px;
+}
+
+.back:hover {
+    color: #fff;
+    transform: none;
+    text-decoration: underline;
+}
+
+#flower-inside {
+    width: 100%;
+    height: 100%;
+    background-color: hsl(175, 59%, 37%);
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
+#river-inside {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 76, 206);
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+
+@keyframes moveFlowers {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.animated-flower {
+    display: inline-block;
+    animation: moveFlowers 3s infinite;
+}

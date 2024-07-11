@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>an oracle for them</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="oracle-inside">
+        <a href="index.html"><button class="back">Go Back</button></a>
+        <div id="question">choose one and get your reading</div>
+        <div id="buttons">
+            <button class="option" onclick="showText(1)">wealth</button>
+            <button class="option" onclick="showText(2)">love</button>
+            <button class="option" onclick="showText(3)">health</button>
+            <button class="option" onclick="showText(4)">relationships</button>
+            <button class="option" onclick="showText(5)">career</button>
+            <button class="option" onclick="showText(6)">plans</button>
+        </div>
+        <div id="display-text"></div>
+    </div>
+    <script>
+        const texts = {
+            1: "Money will reach you. You are attracting money constantly. Your 23rd rotation will be one with less financial worries.",
+            2: "A string gets stretched and relaxed and stretched again. It is attached and held firmly. A tug of war game that only leads to an embrace. I love you. ",
+            3: "They (/them) say those who give the brightest smiles, live the longest lives. :-) You right now. ",
+            4: "Everything will be fine",
+            5: "Everything will be fine",
+            6: "Everything will be fine"
+        };
+
+        let typingTimeout;
+        let fadeOutTimeout;
+
+        function showText(option) {
+            clearTimeout(typingTimeout);
+            clearTimeout(fadeOutTimeout);
+
+            const displayTextElement = document.getElementById("display-text");
+            const text = texts[option];
+            displayTextElement.innerHTML = "";
+            displayTextElement.style.opacity = 1;
+
+            const randomX = Math.random() * (window.innerWidth - displayTextElement.clientWidth);
+            const randomY = Math.random() * (window.innerHeight - displayTextElement.clientHeight);
+            displayTextElement.style.left = `${randomX}px`;
+            displayTextElement.style.top = `${randomY}px`;
+
+            typeText(displayTextElement, text, 0);
+        }
+
+        function typeText(element, text, index) {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                typingTimeout = setTimeout(() => {
+                    typeText(element, text, index + 1);
+                }, 100);
+            } else {
+                fadeOutTimeout = setTimeout(() => {
+                    fadeOutText(element);
+                }, 3000);
+            }
+        }
+
+        function fadeOutText(element) {
+            element.style.opacity = 0;
+        }  
+    </script>
+</body>
+
+</html>
