@@ -9,27 +9,27 @@
 </head>
 
 <body>
+    <video autoplay muted loop id="myVideo">
+  <source src="fishes.mp4" type="video/mp4">
+</video>
+    <audio preload loop autoplay src="/webinar.mp3" type="audio/mp3"></audio>
     <div id="oracle-inside">
         <a href="index.html"><button class="back">Go Back</button></a>
-        <div id="question">choose one and get your reading</div>
+        <div id="question">get your reading</div>
         <div id="buttons">
             <button class="option" onclick="showText(1)">wealth</button>
             <button class="option" onclick="showText(2)">love</button>
             <button class="option" onclick="showText(3)">health</button>
             <button class="option" onclick="showText(4)">relationships</button>
-            <button class="option" onclick="showText(5)">career</button>
-            <button class="option" onclick="showText(6)">plans</button>
         </div>
         <div id="display-text"></div>
     </div>
     <script>
         const texts = {
-            1: "Money will reach you. You are attracting money constantly. Your 23rd rotation will be one with less financial worries.",
-            2: "A string gets stretched and relaxed and stretched again. It is attached and held firmly. A tug of war game that only leads to an embrace. I love you. ",
+            1: "More money with rich pregnant men coming your way",
+            2: "Let's get autistic with mama... ",
             3: "They (/them) say those who give the brightest smiles, live the longest lives. :-) You right now. ",
-            4: "Everything will be fine",
-            5: "Everything will be fine",
-            6: "Everything will be fine"
+            4: "Everything is getting fine",
         };
 
         let typingTimeout;

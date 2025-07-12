@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a flower for them</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="mountain-inside"">
+        <br>
+        <a href=" index.html"><button class="back">go back</button></a>
+        <div id="question">
+            ( no goats on this mountain, only otters and seals )
+        </div>
+        <div id="mountain-item">
+            <audio preload loop autoplay src="/nanou.mp3" type="audio/mp3"></audio>
+        </div>
+        <pre id="animated-mountain" style="font-family: monospace; font-size: 32px;">
+
+                                   /\
+                              /\  //\\
+                       /\    //\\///\\\        /\
+                      //\\  ///\////\\\\  /\  //\\
+         /\          /  ^ \/^ ^/^  ^  ^ \/^ \/  ^ \
+        / ^\    /\  / ^   /  ^/ ^ ^ ^   ^\ ^/  ^^  \
+       /^   \  / ^\/ ^ ^   ^ / ^  ^    ^  \/ ^   ^  \       *
+      /  ^ ^ \/^  ^\ ^ ^I^   ^  ^   ^   ____  ^   ^  \     /|\
+     / ^ ^  ^ \ ^  _\__________LOVE_____|  |_____^ ^  \   /||o\
+    / ^^  ^ ^ ^\  /______________________________\ ^ ^ \ /|o|||\
+   /  ^  ^^ ^ ^  /________________________________\  ^  /|||||o|\
+  /^ ^  ^ ^^  ^    ||___|YOU||||||||||||___|__|||      /||o||||||\       |
+ / ^   ^   ^    ^  ||___|___||||||||||||___|__|||          | |           |
+/ ^ ^ ^  ^  ^  ^   |||||||||||||||||||ZEYNEP|||||oooooooooo| |ooooooo  |
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+        </pre>
+    </div>
+    <script>
+        const animatedText = document.getElementById('animated-mountain');
+        const textLines = animatedText.textContent.trim().split('\n');
+        let currentLine = 0;
+
+        animatedText.textContent = '';
+
+        function revealText() {
+            if (currentLine < textLines.length) {
+                animatedText.textContent += textLines[currentLine] + '\n';
+                currentLine++;
+            } else {
+                clearInterval(revealInterval);
+            }
+        }
+
+        const revealInterval = setInterval(revealText, 2500);
+    </script>
+</body>
+
+</html>

@@ -11,12 +11,22 @@ body {
 #inside {
     width: 100%;
     height: 100%;
-    color: #333;
+    background-image: url(/fishes.mp4);
     font-size: 24px;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     align-content: center;
-    background-color: beige;
+    background-color: #000;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -12;
 }
 
 #hello {
@@ -32,34 +42,32 @@ body {
 }
 
 button {
-    color: white;
-    padding: 16px;
+    font-size: 24px;
     border: none;
 }
 
 button:hover {
-    transform: translateY(-10px);
+    transform: translateY(15px);
     cursor: pointer;
 }
 
 #river {
-    background-color: rgb(40, 76, 206);
+    background-color: rgba(1, 102, 187, 1);
 }
 
 #oracle {
-    background-color: rgb(197, 45, 170);
+    background-color: rgba(242, 157, 196, 1);
 }
 
-#flower {
-    background-color: rgb(80, 210, 199);
+#mountain {
+    background-color: rgba(2, 173, 96, 1);
 }
 
 
 #oracle-inside {
     width: 100%;
     height: 100%;
-    background-color: rgb(197, 45, 170);
-    color: white;
+    color: #fff;
     text-align: center;
     align-content: center;
 }
@@ -74,27 +82,28 @@ button:hover {
 }
 
 #question {
+    font-size: 64px;
     width: 100%;
     height: 10%;
 }
 
 .option {
-    background-color: darkmagenta;
-    color: hsl(300, 100%, 90%);
+    background-color: rgb(0, 67, 139);
+    color: hsl(231, 100%, 90%);
     padding: 8px 16px;
 }
 
 .option:hover {
-    background-color: hsl(300, 100%, 35%);
+    background-color: rgb(0, 128, 170);
 }
 
 #display-text {
-    width: 50vw;
-    font-size: 64px;
-    font-family:cursive;
-    font-weight:bold;
+    width: 65vw;
+    font-size: 72px;
+    font-family: cursive;
+    font-weight: bold;
     color: #000;
-    -webkit-text-stroke: 0.5px #ffa2f1;
+    -webkit-text-stroke: 0.5px #dbffa2;
     opacity: 1;
     transition: opacity 1.4s ease-out;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 1);
@@ -104,7 +113,7 @@ button:hover {
 .back {
     padding: 8px 16px;
     background-color: transparent;
-    color: hsl(0, 0%, 75%);
+    color: #ddd;
     margin-bottom: 16px;
 }
 
@@ -114,10 +123,19 @@ button:hover {
     text-decoration: underline;
 }
 
-#flower-inside {
+#seals {
+    display: flex;
+    flex-direction: row;
+}
+
+#seals img {
+    width: 150px;
+}
+
+#mountain-inside {
     width: 100%;
     height: 100%;
-    background-color: hsl(175, 59%, 37%);
+    background: linear-gradient(180deg, rgba(2, 173, 96, 1) 53%, rgba(191, 160, 73, 1) 100%);
     color: white;
     text-align: center;
     align-content: center;
@@ -133,12 +151,20 @@ button:hover {
 }
 
 @keyframes moveFlowers {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
-.animated-flower {
+.animated-mountain {
     display: inline-block;
-    animation: moveFlowers 3s infinite;
+    animation: moveFlowers 2s infinite;
 }
